@@ -6,6 +6,14 @@ class  Directorio:
         if type(rutas)==str:
              rutas = (rutas.replace(' ','').replace('\t','')).split(',')
         self.rutas = rutas
+    
+    def obtener_derectorio(directori,ruta):
+        ruta_sp = ruta.split('/')
+        for i, rs in enumerate(ruta_sp):
+            if rs == directori:
+                return '/'.join(ruta_sp[:i+1])
+        print('El directorio no esta bien')
+                
 
     def informacion_ruta(ruta):
         while True:
