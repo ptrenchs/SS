@@ -1,2 +1,2 @@
 from .Directorio import *
-from .Densidad_optica import *
+from .regulador import *
