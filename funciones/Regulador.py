@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from math import isnan
-from funciones import Directorio,fusibles_cables
+from funciones import Directorio,Fusibles_Cables
 import os
 
 def df2dict(df):

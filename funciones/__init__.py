@@ -1,3 +1,3 @@
 from .Directorio import *
-from .regulador import *
-from .fusibles_cables import *
+from .Regulador import *
+from .Fusibles_Cables import *
