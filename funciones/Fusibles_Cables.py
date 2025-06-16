@@ -28,7 +28,7 @@ def fusibles_cables(I):
     ruta_archivo = os.path.abspath(__file__)
     ruta_dir = Directorio.obtener_derectorio(directori='SS',ruta=ruta_archivo)
 
-    dfs = pd.read_excel(ruta_dir + 'Excels/cables.xlsx',sheet_name=None)
+    dfs = pd.read_excel(ruta_dir + '/Excels/cables.xlsx',sheet_name=None)
     df_f = dfs['fusibles']
 
     I_adm_fus = df_f['Fusibles (A)']
