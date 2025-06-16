@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from math import isnan
-from funciones import Directorio
+from funciones import Directorio,fusibles_cables
 import os
 
 def df2dict(df):
@@ -52,10 +52,14 @@ def all_reguladores(num_pan, V_co_pan, I_pan, P_pan):
                                 # print(P_pan_all,pa)
                                 if pa > P_pan_all:
                                     df_sol = pd.DataFrame(dict(zip(['Variables','Tensiones','Intensidades', 'Potencias'],transpuesta([['Lo que entra en regulador',v_string,i_all,P_pan_all],['Especificaciones egulador',v,ia,pa]]))))
+                                    area,iaf = fusibles_cables(ia)
+                                    dif_f = pd.DataFrame({'Fusibles(A)':[iaf], 'Cable (mm^2)':[area]})
                                     try:
                                         display(df_sol)
+                                        display(dif_f)
                                     except:
                                         print(df_sol)
+                                        print(dif_f)
                                     print(f'string {num_string} de {int(n_pan_str)} placas con un iversor de {int(v)}/{int(ia)} y potencia de {pa}')
                                     print('\n')
                                     break
