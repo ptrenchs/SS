@@ -52,7 +52,7 @@ def all_reguladores(num_pan, V_co_pan, I_pan, P_pan):
                                 # print(P_pan_all,pa)
                                 if pa > P_pan_all:
                                     df_sol = pd.DataFrame(dict(zip(['Variables','Tensiones','Intensidades', 'Potencias'],transpuesta([['Lo que entra en regulador',v_string,i_all,P_pan_all],['Especificaciones egulador',v,ia,pa]]))))
-                                    area,iaf = fusibles_cables(ia)
+                                    area,iaf = Fusibles_Cables.fusibles_cables(ia)
                                     dif_f = pd.DataFrame({'Fusibles(A)':[iaf], 'Cable (mm^2)':[area]})
                                     try:
                                         display(df_sol)
