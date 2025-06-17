@@ -51,15 +51,17 @@ def all_reguladores(num_pan, V_co_pan, I_pan, P_pan):
                             for pa in P_adm:
                                 # print(P_pan_all,pa)
                                 if pa > P_pan_all:
+                                    area_a,iaf_a = Fusibles_Cables.fusibles_cables(i_all)
+                                    dic_f_a = dif_f_d = pd.DataFrame({'Fusibles(A)':[iaf_a], 'Cable (mm^2)':[area_a]})
                                     df_sol = pd.DataFrame(dict(zip(['Variables','Tensiones','Intensidades', 'Potencias'],transpuesta([['Lo que entra en regulador',v_string,i_all,P_pan_all],['Especificaciones egulador',v,ia,pa]]))))
-                                    area,iaf = Fusibles_Cables.fusibles_cables(ia)
-                                    dif_f = pd.DataFrame({'Fusibles(A)':[iaf], 'Cable (mm^2)':[area]})
+                                    area_d,iaf_D = Fusibles_Cables.fusibles_cables(ia)
+                                    dif_f_d = pd.DataFrame({'Fusibles(A)':[iaf_D], 'Cable (mm^2)':[area_d]})
                                     try:
                                         display(df_sol)
-                                        display(dif_f)
+                                        display(dif_f_d)
                                     except:
                                         print(df_sol)
-                                        print(dif_f)
+                                        print(dif_f_d)
                                     print(f'string {num_string} de {int(n_pan_str)} placas con un iversor de {int(v)}/{int(ia)} y potencia de {pa}')
                                     print('\n')
                                     break
