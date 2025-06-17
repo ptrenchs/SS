@@ -73,7 +73,7 @@ def all_reguladores(num_pan, V_co_pan, I_pan, P_pan):
                                     print(f'String {num_string} de {int(n_pan_str)} placas con un iversor de {int(v)}/{int(ia)} y potencia de {pa}')
                                     print(f'Antes del regulador se requiere de un fusible {iaf_a} y un cable de {area_a} mm^2')
                                     print(f'Despues del regulador se requiere de un fusible {iaf_d} y un cable de {area_d} mm^2')
-                                    print('\n\n')
+                                    print(75*'-')
                                     break
                         # if pa > P_pan_all:
                         #     break
