@@ -52,18 +52,28 @@ def all_reguladores(num_pan, V_co_pan, I_pan, P_pan):
                                 # print(P_pan_all,pa)
                                 if pa > P_pan_all:
                                     area_a,iaf_a = Fusibles_Cables.fusibles_cables(i_all)
-                                    dic_f_a = dif_f_d = pd.DataFrame({'Fusibles(A)':[iaf_a], 'Cable (mm^2)':[area_a]})
+                                    dic_f_a = pd.DataFrame({'Fusibles(A)':[iaf_a], 'Cable (mm^2)':[area_a]})
                                     df_sol = pd.DataFrame(dict(zip(['Variables','Tensiones','Intensidades', 'Potencias'],transpuesta([['Lo que entra en regulador',v_string,i_all,P_pan_all],['Especificaciones egulador',v,ia,pa]]))))
-                                    area_d,iaf_D = Fusibles_Cables.fusibles_cables(ia)
-                                    dif_f_d = pd.DataFrame({'Fusibles(A)':[iaf_D], 'Cable (mm^2)':[area_d]})
+                                    area_d,iaf_d = Fusibles_Cables.fusibles_cables(ia)
+                                    dic_f_d = pd.DataFrame({'Fusibles(A)':[iaf_d], 'Cable (mm^2)':[area_d]})
                                     try:
+                                        print('Fusibles y cables antes del regulador\n')
+                                        display(dic_f_a)
+                                        print('Caracteristicas regulador\n')
                                         display(df_sol)
-                                        display(dif_f_d)
+                                        print('Fusibles y cables antes del regulador\n')
+                                        display(dic_f_d)
                                     except:
+                                        print('Fusibles y cables antes del regulador\n')
+                                        print(dic_f_a)
+                                        print('Caracteristicas regulador\n')
                                         print(df_sol)
-                                        print(dif_f_d)
-                                    print(f'string {num_string} de {int(n_pan_str)} placas con un iversor de {int(v)}/{int(ia)} y potencia de {pa}')
-                                    print('\n')
+                                        print('Fusibles y cables antes del regulador\n')
+                                        print(dic_f_d)
+                                    print(f'String {num_string} de {int(n_pan_str)} placas con un iversor de {int(v)}/{int(ia)} y potencia de {pa}')
+                                    print(f'Antes del regulador se requiere de un fusible {iaf_a} y un cable de {area_a} mm^2')
+                                    print(f'Despues del regulador se requiere de un fusible {iaf_d} y un cable de {area_d} mm^2')
+                                    print('\n\n')
                                     break
                         # if pa > P_pan_all:
                         #     break
