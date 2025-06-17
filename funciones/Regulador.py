@@ -74,6 +74,8 @@ def all_reguladores(num_pan, V_co_pan, I_pan, P_pan):
                                     print(f'Antes del regulador se requiere de un fusible {iaf_a} y un cable de {area_a} mm^2')
                                     print(f'Despues del regulador se requiere de un fusible {iaf_d} y un cable de {area_d} mm^2')
                                     print(75*'-')
+                                    print()
+                                    print(75*'-')
                                     break
                         # if pa > P_pan_all:
                         #     break
