@@ -89,4 +89,5 @@ def rellenar_all(ruta_excel,rutas_pdf):
             OUTPUT_PDF = os.path.join(carpeta_rellena, os.path.basename(rc))
 
             rellenar_pdf(rc,OUTPUT_PDF,df)
+    os.remove(ruta_excel)
     return carpeta_rellena
